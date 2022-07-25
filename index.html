@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #parrallaxLayer1{
+            position: fixed;
+            background: url('img/10_distant_clouds.png') no-repeat 0px 200px;
+            width: 100%;
+            height: 800px;
+        }
+        #parrallaxLayer2{
+            position: fixed;
+            background: url('img/09_distant_clouds1.png') no-repeat 300px 400px;
+            width: 100%;
+            height: 1000px;
+        }
+        #parrallaxLayer3{
+            position: fixed;
+            background: url('img/08_clouds.png') no-repeat 400px 50px;
+            width: 100%;
+            height: 300px;
+        }
+        #parrallaxLayer4{
+            position: fixed;
+            background: url('img/07_huge_clouds.png') no-repeat -100px 150px;
+            width: 100%;
+            height: 750px;
+        }
+        #parrallaxLayer5{
+            position: fixed;
+            background: url('img/06_hill2.png') no-repeat 0px 50px;
+            width: 100%;
+            height: 1200px;
+        }
+        #parrallaxLayer6{
+            position: fixed;
+            background: url('img/05_hill1.png') no-repeat 0px -50px;
+            width: 100%;
+            height: 1200px;
+        }
+        #parrallaxLayer7{
+            position: fixed;
+            background: url('img/04_bushes.png') no-repeat 0px -50px;
+            width: 100%;
+            height: 1200px;
+        }
+        body{ margin: 0px; background: url('img/11_background.png') fixed;}
+        #content_layer{ position: absolute;}
+    </style>
+    <script>
+        function parrallax(){
+            let parrallaxLayer1 = document.getElementById('parrallaxLayer1') ;
+            let parrallaxLayer2 = document.getElementById('parrallaxLayer2') ;
+            let parrallaxLayer3 = document.getElementById('parrallaxLayer3') ;
+            let parrallaxLayer4 = document.getElementById('parrallaxLayer4') ;
+            let parrallaxLayer5 = document.getElementById('parrallaxLayer5') ;
+            let parrallaxLayer6 = document.getElementById('parrallaxLayer6') ;
+            parrallaxLayer1.style.top=-(window.pageYOffset/8)+'px';
+            parrallaxLayer2.style.top=-(window.pageYOffset/10)+'px';
+            parrallaxLayer3.style.top=-(window.pageYOffset/6)+'px';
+            parrallaxLayer4.style.top=-(window.pageYOffset/15)+'px';
+            parrallaxLayer5.style.left=(window.pageYOffset)/3+'px';
+            parrallaxLayer6.style.left=-(window.pageYOffset)/3+'px';
+        }
+window.addEventListener('scroll', parrallax, false);
+    </script>
+</head>
+<body>
+<div id="parrallaxLayer1"></div>
+<div id="parrallaxLayer2"></div>
+<div id="parrallaxLayer3"></div>
+<div id="parrallaxLayer4"></div>
+<div id="parrallaxLayer5"></div>
+<div id="parrallaxLayer6"></div>
+<div id="parrallaxLayer7"></div>
+<div id="content_layer"><script> for (let i = 0; i < 50; i++) {
+    document.write(`<h1>This dummy line ${i}</h1>`)
+}</script></div>
+</body>
+</html>

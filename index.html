@@ -13,13 +13,12 @@
             position:fixed ;
             background: url('img/10_distant_clouds.png') repeat-x 100px 200px;
             width: 100%;
-            height: 800px;
         }
         #parrallaxLayer2{
             position: fixed;
-            background: url(img/birds.gif);
+            background: url('img/birds.gif') repeat-x 0px 0px;
             width: 100%;
-            height: 1000px;
+            height: 100%;
         }
         #parrallaxLayer3{
             position: fixed;
@@ -53,7 +52,7 @@
         }
         body{ margin: 0px; background: url('img/11_background.png') fixed;}
         #content_layer{ position: absolute;}
-        h1{
+        h5{
             opacity: 0%;
         }
     </style>
@@ -68,9 +67,9 @@
             let parrallaxLayer5 = document.getElementById('parrallaxLayer5') ;
             let parrallaxLayer6 = document.getElementById('parrallaxLayer6') ;
             let parrallaxLayer7 = document.getElementById('parrallaxLayer7') ;
-            parrallaxLayer1.style.left=-(y)+'px';
-            parrallaxLayer2.style.left=-(window.pageYOffset/2)+'px';
-            parrallaxLayer3.style.left=-(window.pageYOffset/10)+'px';
+            parrallaxLayer1.style.left=(window.pageYOffset/30)+'px';
+            parrallaxLayer2.style.left=(window.pageYOffset/2)+'px';
+            parrallaxLayer3.style.left=(window.pageYOffset/10)+'px';
             parrallaxLayer4.style.left=-(window.pageYOffset/14)+'px';
             parrallaxLayer5.style.left=-(window.pageYOffset/3)+'px';
             parrallaxLayer6.style.left=-(window.pageYOffset/5)+'px';
@@ -79,21 +78,21 @@
         }
 
         window.addEventListener('scroll', function (){
-            console.log("counter: ", ++counter, "scrolly", parrallax());
-            // if (window.pageYOffset<500;counter>=0;counter--)
+            console.log("counter: ", ++counter, "scrolly");
+        // parrallax()
         });
     </script>
 </head>
 <body>
-<!--<div id="parrallaxLayer1"></div>-->
+<div id="parrallaxLayer1"></div>
 <div id="parrallaxLayer2"></div>
-<!--<div id="parrallaxLayer3"></div>-->
-<!--<div id="parrallaxLayer4"></div>-->
+<div id="parrallaxLayer3"></div>
+<div id="parrallaxLayer4"></div>
 <!--<div id="parrallaxLayer5"></div>-->
 <!--<div id="parrallaxLayer6"></div>-->
 <!--<div id="parrallaxLayer7"></div>-->
-<!--<div id="content_layer"><script> for (let i = 0; i < 5000; i++) {-->
-<!--    someScrollz = document.createElement('h1');-->
+<!--<div id="content_layer"><script> for (let i = 0; i < 2; i++) {-->
+<!--    someScrollz = document.createElement('h5');-->
 <!--    someScrollz.textContent = 'just scrolling by';-->
 <!--    document.body.appendChild(someScrollz);-->
 <!--    //write(`<h1>This dummy line ${i}</h1>`)-->

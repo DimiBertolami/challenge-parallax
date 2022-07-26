@@ -3,9 +3,9 @@
 
   sketch = Sketch.create();
 
-  sketch.mouse.x = sketch.width / 10;
+  sketch.mouse.x = sketch.width / 20;
 
-  sketch.mouse.y = sketch.height;
+  sketch.mouse.y = sketch.height/5;
 
   skylines = [];
 
@@ -25,15 +25,15 @@
     this.width = config.width;
     this.height = config.height;
     this.color = config.color;
-    this.slantedTop = floor(random(0, 10)) === 0;
-    this.slantedTopHeight = this.width / random(2, 4);
+    this.slantedTop = floor(random(0, 5)) === 0;
+    this.slantedTopHeight = this.width / random(1, 4);
     this.slantedTopDirection = round(random(0, 1)) === 0;
     this.spireTop = floor(random(0, 15)) === 0;
-    this.spireTopWidth = random(this.width * .01, this.width * .07);
+    this.spireTopWidth = random(this.width * .01, this.width * .03);
     this.spireTopHeight = random(10, 20);
-    this.antennaTop = !this.spireTop && floor(random(0, 10)) === 0;
-    this.antennaTopWidth = this.layer / 2;
-    return this.antennaTopHeight = random(5, 20);
+    this.antennaTop = !this.spireTop && floor(random(0, 30)) === 0;
+    this.antennaTopWidth = this.layer / 4;
+    return this.antennaTopHeight = random(5, 50);
   };
 
   Building.prototype.render = function() {
@@ -59,8 +59,8 @@
     if (this.spireTop) {
       sketch.beginPath();
       sketch.moveTo(this.x + (this.width / 2), this.y - this.spireTopHeight);
-      sketch.lineTo(this.x + (this.width / 2) + this.spireTopWidth, this.y);
-      sketch.lineTo(this.x + (this.width / 2) - this.spireTopWidth, this.y);
+      sketch.lineTo(this.x + (this.width / 4) + this.spireTopWidth, this.y);
+      sketch.lineTo(this.x + (this.width / 6) - this.spireTopWidth, this.y);
       sketch.closePath();
       sketch.fill();
       sketch.stroke();
